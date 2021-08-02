@@ -1,0 +1,7 @@
+# Maven
+target/
+
+# IntelliJ
+.idea/*
+!.idea/codeStyles/
+*.iml
