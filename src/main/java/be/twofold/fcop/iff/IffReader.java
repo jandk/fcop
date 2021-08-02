@@ -7,6 +7,8 @@ import java.util.stream.*;
 
 public final class IffReader implements Iterable<IffChunk>, AutoCloseable {
 
+    private static final int GroupSize = 24 * 1024;
+
     private InputStream input;
 
     public IffReader(InputStream input) {
@@ -65,6 +67,10 @@ public final class IffReader implements Iterable<IffChunk>, AutoCloseable {
 
         private IffChunk readChunk() {
             try {
+                if (GroupSize - (offset % GroupSize) == 4) {
+                    input.skip(4);
+                    offset += 4;
+                }
                 byte[] header = input.readNBytes(HeaderSize);
                 if (header.length < HeaderSize) {
                     return null;

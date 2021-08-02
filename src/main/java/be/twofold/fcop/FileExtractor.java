@@ -74,7 +74,9 @@ public final class FileExtractor {
         saveFile();
 
         // Save the music separately
-        files.add(new ShocFile(0, IffFourCC.MSIC, msic.toByteArray(), swvr.getFilename()));
+        if (msic.size() > 0) {
+            files.add(new ShocFile(0, IffFourCC.MSIC, msic.toByteArray(), swvr.getFilename()));
+        }
 
         msic = null;
         sdat = null;
