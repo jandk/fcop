@@ -13,11 +13,6 @@ public final class CbmpHandler implements FileHandler {
     private static final int Height = 256;
 
     @Override
-    public IffFourCC getFourCC() {
-        return IffFourCC.Cbmp;
-    }
-
-    @Override
     public String getExtension() {
         return "png";
     }

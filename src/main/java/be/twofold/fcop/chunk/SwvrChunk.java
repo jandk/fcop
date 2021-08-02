@@ -1,11 +1,10 @@
 package be.twofold.fcop.chunk;
 
-import be.twofold.fcop.iff.*;
 import be.twofold.fcop.util.*;
 
 import java.nio.charset.*;
 
-public final class SwvrChunk extends Chunk {
+public final class SwvrChunk {
 
     private final String filename;
 
@@ -21,11 +20,6 @@ public final class SwvrChunk extends Chunk {
 
     public String getFilename() {
         return filename;
-    }
-
-    @Override
-    public IffFourCC getType() {
-        return IffFourCC.SWVR;
     }
 
 }

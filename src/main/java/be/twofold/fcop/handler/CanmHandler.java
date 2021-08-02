@@ -1,6 +1,5 @@
 package be.twofold.fcop.handler;
 
-import be.twofold.fcop.iff.*;
 import be.twofold.fcop.util.*;
 
 import javax.imageio.*;
@@ -12,11 +11,6 @@ import java.nio.*;
 public final class CanmHandler implements FileHandler {
 
     private static final int PaletteSize = 256;
-
-    @Override
-    public IffFourCC getFourCC() {
-        return IffFourCC.canm;
-    }
 
     @Override
     public String getExtension() {
@@ -67,9 +61,7 @@ public final class CanmHandler implements FileHandler {
         for (int r = 0; r < 12; r++) {
             for (int t = 0; t < 4; t++) {
                 int y = t * 12 + r;
-                for (int x = 0, o = y * 64; x < 64; x++) {
-                    data[o++] = buffer.get();
-                }
+                buffer.get(data, y * 64, 64);
             }
         }
 

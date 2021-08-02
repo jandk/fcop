@@ -34,20 +34,20 @@ public abstract class WaveHandler implements FileHandler {
 
         // RIFF chunk
         header.putInt(0x46464952);       // "RIFF"
-        header.putInt(size + 36);
+        header.putInt(size + 36);        // "RIFF" size
         header.putInt(0x45564157);       // "WAVE"
 
         // fmt_ chunk
-        header.putInt(0x20746d66);          // "fmt "
-        header.putInt(16);
-        header.putShort((short) 1);         // wFormatTag
+        header.putInt(0x20746d66);         // "fmt "
+        header.putInt(16);                 // "fmt " size
+        header.putShort((short) 1);        // wFormatTag
         header.putShort((short) channels); // nChannels
-        header.putInt(samplerate);      // nSamplesPerSec
-        header.putInt(nAvgBytesPerSec);     // nAvgBytesPerSec
-        header.putShort((short) 1);         // nBlockAlign
-        header.putShort((short) 8);         // wBitsPerSample
-        header.putInt(0x61746164);          // "data"
-        header.putInt(size);
+        header.putInt(samplerate);         // nSamplesPerSec
+        header.putInt(nAvgBytesPerSec);    // nAvgBytesPerSec
+        header.putShort((short) 1);        // nBlockAlign
+        header.putShort((short) 8);        // wBitsPerSample
+        header.putInt(0x61746164);         // "data"
+        header.putInt(size);               // "data" size
 
         return header.array();
     }

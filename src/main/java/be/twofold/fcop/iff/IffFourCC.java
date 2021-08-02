@@ -43,15 +43,15 @@ public enum IffFourCC {
         this.code = code;
     }
 
+    public int getCode() {
+        return code;
+    }
+
     public static IffFourCC fromCode(int code) {
         return Arrays.stream(values())
             .filter(iffFourCC -> iffFourCC.code == code)
             .findFirst()
             .orElseThrow(() -> new IllegalArgumentException(String.format("Invalid code: 0x%08x", code)));
-    }
-
-    public int getCode() {
-        return code;
     }
 
 }

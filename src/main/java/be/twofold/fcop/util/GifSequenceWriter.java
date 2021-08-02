@@ -1,4 +1,4 @@
-package be.twofold.fcop.util;//
+package be.twofold.fcop.util;
 
 import javax.imageio.*;
 import javax.imageio.metadata.*;

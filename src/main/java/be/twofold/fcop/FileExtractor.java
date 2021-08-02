@@ -12,10 +12,10 @@ import java.util.stream.*;
 
 public final class FileExtractor {
     private static final Map<IffFourCC, FileHandler> Handlers = new EnumMap<>(Map.of(
-        IffFourCC.canm, new CanmHandler(),
         IffFourCC.Cbmp, new CbmpHandler(),
         IffFourCC.Cwav, new CwavHandler(),
         IffFourCC.MSIC, new MsicHandler(),
+        IffFourCC.canm, new CanmHandler(),
         IffFourCC.snds, new SndsHandler()
     ));
 
