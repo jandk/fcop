@@ -3,6 +3,7 @@ package be.twofold.fcop.iff;
 import java.util.*;
 
 public enum IffFourCC {
+    AnmD(0x416e6d44),
     CTRL(0x4354524c),
     Cact(0x43616374),
     Cbmp(0x43626d70),
@@ -20,6 +21,17 @@ public enum IffFourCC {
     Ctil(0x4374696c),
     Ctos(0x43746f73),
     Cwav(0x43776176),
+    DBB3(0x33444242),
+    DGI4(0x34444749),
+    DHS3(0x33444853),
+    DHY3(0x33444859),
+    DMI3(0x33444d49),
+    DNL4(0x34444e4c),
+    DQL3(0x3344514c),
+    DRF3(0x33445246),
+    DRL3(0x3344524c),
+    DTL3(0x3344544c),
+    DVL4(0x3444564c),
     FILL(0x46494c4c),
     LkUp(0x4c6b5570),
     MSIC(0x4d534943),
